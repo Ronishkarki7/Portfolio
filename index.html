@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ronish Karki</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
     <header class="site-header">
@@ -24,19 +24,260 @@
         </nav>
     </header>
 
-    <main class="hero">
-        <div class="hero-inner">
-            <h2>Hi — I build clean, performant web apps.</h2>
-            <p class="lead">JavaScript • React • Node.js • UI/UX</p>
-            <div class="cta">
-                <a class="btn" href="projects.html">View projects</a>
-                <a class="btn ghost" href="contact.html">Contact me</a>
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <h2>Hi — I build clean, performant web apps.</h2>
+                <p class="lead">JavaScript • React • Node.js • UI/UX</p>
+                <div class="cta">
+                    <a class="btn" href="#projects">View projects</a>
+                    <a class="btn ghost" href="contact.html">Contact me</a>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p class="about-text">
+                        I'm a passionate Full Stack Developer with a love for creating elegant solutions to complex problems. 
+                        I specialize in building modern web applications that are both beautiful and functional. 
+                        With expertise across the entire development stack, I bring ideas to life from concept to deployment.
+                    </p>
+                    <p class="about-text">
+                        When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, 
+                        and sharing knowledge with the developer community.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Frontend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Backend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">SpringBoot</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Tools & Others</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Jest</span>
+                            <span class="skill-tag">Webpack</span>
+                            <span class="skill-tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Senior Full Stack Developer</h3>
+                                <p class="experience-company">Tech Solutions Inc.</p>
+                            </div>
+                            <span class="experience-date">2022 - Present</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Architected and implemented RESTful APIs using Node.js and Express</li>
+                            <li>Collaborated with cross-functional teams to deliver high-quality products</li>
+                            <li>Mentored junior developers and conducted code reviews</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Full Stack Developer</h3>
+                                <p class="experience-company">StartupXYZ</p>
+                            </div>
+                            <span class="experience-date">2020 - 2022</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Developed responsive frontend applications using React and TypeScript</li>
+                            <li>Built and maintained backend services with Node.js and MongoDB</li>
+                            <li>Implemented authentication and authorization systems</li>
+                            <li>Optimized application performance, reducing load times by 40%</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Junior Web Developer</h3>
+                                <p class="experience-company">Digital Agency</p>
+                            </div>
+                            <span class="experience-date">2019 - 2020</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Created responsive websites using HTML, CSS, and JavaScript</li>
+                            <li>Worked with CMS platforms like WordPress</li>
+                            <li>Collaborated with designers to implement pixel-perfect UI designs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="muted">A full-stack e-commerce solution with payment integration</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h3 class="project-title">Task Management App</h3>
+                            <p class="muted">Collaborative task management with real-time updates</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">Socket.io</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h3 class="project-title">Social Media Dashboard</h3>
+                            <p class="muted">Analytics dashboard with data visualization</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">D3.js</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h3 class="project-title">Weather App</h3>
+                            <p class="muted">Real-time weather information with location services</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">API</span>
+                                <span class="tech-tag">CSS3</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h3 class="project-title">Blog Platform</h3>
+                            <p class="muted">Modern blog platform with markdown support</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">GraphQL</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h3 class="project-title">Fitness Tracker</h3>
+                            <p class="muted">Personal fitness tracking with progress analytics</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Redux</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-list">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div>
+                                <h3 class="education-degree">Bachelor of Science in Computer Science</h3>
+                                <p class="education-school">University Name</p>
+                            </div>
+                            <span class="education-date">2015 - 2019</span>
+                        </div>
+                        <p class="education-details">Focused on software engineering, algorithms, and web development. Graduated with honors.</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div>
+                                <h3 class="education-degree">Full Stack Web Development Bootcamp</h3>
+                                <p class="education-school">Coding Bootcamp</p>
+                            </div>
+                            <span class="education-date">2019</span>
+                        </div>
+                        <p class="education-details">Intensive 6-month program covering modern web development technologies and best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
-        © <span id="year">2025</span> Ronish Karki — Built with care
+        <div class="container">
+            <p>© <span id="year">2025</span> Ronish Karki — Built with care</p>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+            </div>
+        </div>
     </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
