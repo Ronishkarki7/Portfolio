@@ -8,20 +8,28 @@
 </head>
 <body>
     <header class="site-header">
-        <a class="brand" href="home.html">
-            <img class="photo" src="Image/IMG_0168 2.png" alt="Ronish Karki">
-            <div class="brand-info">
-                <h1 class="name">Ronish Karki</h1>
-                <p class="role"> Computer Science Student <br>Finance Manager</p>
-            </div>
-        </a>
+        <div class="header-inner container">
+            <a class="brand" href="home.html">
+                <img class="photo" src="Image/IMG_0168 2.png" alt="Ronish Karki">
+                <div class="brand-info">
+                    <h1 class="name">Ronish Karki</h1>
+                    <p class="role"> Computer Science Student <br>Finance Manager</p>
+                </div>
+            </a>
 
-        <nav class="main-nav" aria-label="Primary">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+            <nav class="main-nav" id="primary-nav" aria-label="Primary">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main>
