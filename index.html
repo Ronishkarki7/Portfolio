@@ -257,11 +257,11 @@
                     <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
                         <div class="form-field">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-field">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="_replyto" placeholder="you@example.com" required>
+                            <input type="email" id="email" name="_replyto" placeholder="name@gmail.com" required>
                         </div>
                         <div class="form-field">
                             <label for="message">Message</label>
@@ -316,7 +316,27 @@
         </div>
     </footer>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.getElementById('primary-nav');
+
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = mainNav.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            mainNav.addEventListener('click', (event) => {
+                if (event.target.matches('a') && mainNav.classList.contains('is-open')) {
+                    mainNav.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
     </script>
 </body>
 </html>
