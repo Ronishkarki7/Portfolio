@@ -68,9 +68,9 @@
                     <div class="skill-category">
                         <h3 class="skill-category-title">Frontend</h3>
                         <div class="skill-tags">
-                            <span class="skill-tag">JavaScript</span>
                             <span class="skill-tag">HTML5</span>
                             <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
                         </div>
                     </div>
                     <div class="skill-category">
@@ -90,6 +90,34 @@
                             <span class="skill-tag">Webpack</span>
                             <span class="skill-tag">Figma</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-list">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div>
+                                <h3 class="education-degree">Bachelor of Science in Computer Science</h3>
+                                <p class="education-school">Biratnagar International College</p>
+                            </div>
+                            <span class="education-date">2024 - Present</span>
+                        </div>
+                        <p class="education-details">Focused on algorithms, real time problem solving skills and web development. Graduated with honors.</p>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div>
+                                <h3 class="education-degree">Higher Education</h3>
+                                <p class="education-school">Kasturi Secondary School</p>
+                            </div>
+                            <span class="education-date">2018- 2020</span>
+                        </div>
+                        <p class="education-details">Explored business fundamentals, financial management, and leadership skills.</p>
                     </div>
                 </div>
             </div>
@@ -185,67 +213,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="card-body">
-                            <h3 class="project-title">E-Commerce Platform</h3>
-                            <p class="muted">A full-stack e-commerce solution with payment integration and user management system.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="card-body">
-                            <h3 class="project-title">Blog Platform</h3>
-                            <p class="muted">Modern blog platform with markdown support, user authentication, and content management.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Next.js</span>
-                                <span class="tech-tag">GraphQL</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="card-body">
-                            <h3 class="project-title">Fitness Tracker</h3>
-                            <p class="muted">Personal fitness tracking application with progress analytics and workout planning features.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">React Native</span>
-                                <span class="tech-tag">Firebase</span>
-                                <span class="tech-tag">Redux</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="education">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                <div class="education-list">
-                    <div class="education-item">
-                        <div class="education-header">
-                            <div>
-                                <h3 class="education-degree">Bachelor of Science in Computer Science</h3>
-                                <p class="education-school">Biratnagar International College</p>
-                            </div>
-                            <span class="education-date">2024 - Present</span>
-                        </div>
-                        <p class="education-details">Focused on algorithms, real time problem solving skills and web development. Graduated with honors.</p>
-                    </div>
-                    <div class="education-item">
-                        <div class="education-header">
-                            <div>
-                                <h3 class="education-degree">Higher Education</h3>
-                                <p class="education-school">Kasturi Secondary School</p>
-                            </div>
-                            <span class="education-date">2018- 2020</span>
-                        </div>
-                        <p class="education-details">Explored business fundamentals, financial management, and leadership skills.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -307,36 +274,32 @@
                     </div>
             </div>
         </div>
+        <div class="video-wrap">
+            <img src="/Image/youtube-svgrepo-com.svg" alt="Birds Chanting preview" class="video-thumb">
+            <video controls width="640" height="360" poster="/Image/img.jpg" class="video-btn">
+                <source src="/Image/IMG_1527.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
         </section>
+        <div class="music-wrap">
+            <img src="/Image/music.png" alt="MUSIC" class="music-img">
+            <audio id="myaudio" controls preload="metadata" src="/Image/NIHITA (नहत).mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <button class="signup-btn" id="signupBtn">Up</button>
+
     </main>
+
 
     <footer class="site-footer">
         <div class="container">
             <p> <span id="year"></span> Ronish Karki — Built with care</p>
         </div>
     </footer>
-    <script>
-        const yearEl = document.getElementById('year');
-        if (yearEl) {
-            yearEl.textContent = new Date().getFullYear();
-        }
-
-        const navToggle = document.querySelector('.nav-toggle');
-        const mainNav = document.getElementById('primary-nav');
-
-        if (navToggle && mainNav) {
-            navToggle.addEventListener('click', () => {
-                const isOpen = mainNav.classList.toggle('is-open');
-                navToggle.setAttribute('aria-expanded', String(isOpen));
-            });
-
-            mainNav.addEventListener('click', (event) => {
-                if (event.target.matches('a') && mainNav.classList.contains('is-open')) {
-                    mainNav.classList.remove('is-open');
-                    navToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-        }
-    </script>
+    <script src="index.js"></script>
+     
 </body>
 </html>
+
