@@ -28,6 +28,8 @@
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
+                <!-- Theme toggle button (added) -->
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">🌙</button>
             </nav>
         </div>
     </header>
@@ -58,6 +60,37 @@
                         and sharing knowledge with the developer community.
                     </p>
                 </div>
+
+                <!-- Image Slider Section -->
+                <div class="image-slider-container">
+                    <h3 class="slider-title">My Journey</h3>
+                    <div class="slider-wrapper">
+                        <div class="slider">
+                            <img class="slider-image active" src="Image/profile.png" alt="Profile Photo">
+                            <img class="slider-image" src="Image/IMG_6283.png" alt="Work Photo 1">
+                            <img class="slider-image" src="Image/IMG_3016.JPG" alt="Work Photo 2">
+                            <img class="slider-image" src="Image/IMG_5963.png" alt="Work Photo 3">
+                            <img class="slider-image" src="Image/IMG_6736.png" alt="Work Photo 4">
+
+                        </div>
+                        
+                        <button class="slider-btn prev" id="prevBtn" aria-label="Previous image">
+                            <span>❮</span>
+                        </button>
+                        <button class="slider-btn next" id="nextBtn" aria-label="Next image">
+                            <span>❯</span>
+                        </button>
+                    </div>
+                    
+                    <div class="slider-dots">
+                        <button class="dot active" data-index="0" aria-label="Image 1"></button>
+                        <button class="dot" data-index="1" aria-label="Image 2"></button>
+                        <button class="dot" data-index="2" aria-label="Image 3"></button>
+                        <button class="dot" data-index="3" aria-label="Image 4"></button>
+                        <button class="dot" data-index="4" aria-label="Image 5"></button>
+
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -86,7 +119,6 @@
                         <h3 class="skill-category-title">Tools & Others</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Jest</span>
                             <span class="skill-tag">Webpack</span>
                             <span class="skill-tag">Figma</span>
                         </div>
@@ -189,8 +221,10 @@
                                 <span class="tech-tag">API</span>
                                 <span class="tech-tag">CSS3</span>
                             </div>
+                            <button class="btn live-demo" type="button" onclick="window.location.href='https://ronishkarki7.github.io/weather-app/'">Live demo</button>
                         </div>
                     </div>
+
                     <div class="project-card">
                         <div class="card-body">
                             <h3 class="project-title">Futsal Booking App</h3>
@@ -200,8 +234,10 @@
                                 <span class="tech-tag">SpringBoot</span>
                                 <span class="tech-tag">MySQL</span>
                             </div>
+                            <button class="btn live-demo" type="button" onclick="window.location.href='https://example.com/futsal-booking-app'">Live demo</button>
                         </div>
                     </div>
+
                     <div class="project-card">
                         <div class="card-body">
                             <h3 class="project-title">Social Media Dashboard</h3>
@@ -211,6 +247,7 @@
                                 <span class="tech-tag">D3.js</span>
                                 <span class="tech-tag">Python</span>
                             </div>
+                            <button class="btn live-demo" type="button" onclick="window.location.href='https://example.com/'">Live demo</button>
                         </div>
                     </div>
                 </div>

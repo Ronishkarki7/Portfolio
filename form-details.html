@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Form Details</title>
+  <link rel="stylesheet" href="form.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Contact form details</h2>
+    <div id="details"><p class="notice">Loading...</p></div>
+    <a href="index.html" class="button">Back</a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('details');
+      try {
+        const raw = localStorage.getItem('contactForm');
+        if (!raw) {
+          container.innerHTML = '<p class="notice">No form data found.</p>';
+          return;
+        }
+        const data = JSON.parse(raw);
+        const html = [
+          '<div class="field"><div class="label">Name</div><div class="value">' + (data.name || '') + '</div></div>',
+          '<div class="field"><div class="label">Email</div><div class="value">' + (data.email || '') + '</div></div>',
+          '<div class="field"><div class="label">Message</div><div class="value">' + (data.message || '') + '</div></div>',
+        ].join('');
+        container.innerHTML = html;
+        // optional: clear after reading
+        // localStorage.removeItem('contactForm');
+      } catch (err) {
+        container.innerHTML = '<p class="notice">Failed to read saved data.</p>';
+      }
+    });
+  </script>
+</body>
+</html>
