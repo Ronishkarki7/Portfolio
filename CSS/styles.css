@@ -675,15 +675,15 @@ html, body {
 .music-wrap {
   width: min(100%, 600px);
   margin: 0 auto var(--space-md);
-  padding: 18px 24px 10px;
+  padding: 18px 24px 18px;
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,0.05);
-  background: rgba(10,18,32,0.8);
+  background: rgba(10,18,32,0.65);
   box-shadow: 0 12px 35px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .music-img {
@@ -691,37 +691,35 @@ html, body {
   height: 82px;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: 0 12px 30px rgba(1,5,17,0.55);
   object-fit: cover;
   border: 2px solid rgba(110,231,183,0.5);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.music-img:hover {
-  transform: scale(1.05) rotate(-2deg);
-  box-shadow: 0 16px 35px rgba(1,5,17,0.65);
-  border-color: rgba(110,231,183,0.8);
-}
-
+/* Replace the old hidden audio rules with visible, full-width controls */
 #myaudio {
   width: 100%;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  margin-top: 0;
+  max-height: none;             /* allow full control bar height */
+  opacity: 1 !important;        /* ensure controls are visible */
+  overflow: visible;
+  margin-top: 12px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: max-height 0.28s ease, opacity 0.22s ease, margin-top 0.22s ease;
-  pointer-events: none;
+  pointer-events: auto !important;
+  background: transparent;
+  display: block;
 }
 
-.music-wrap:hover #myaudio,
-#myaudio:focus-within {
-  max-height: 120px;
-  opacity: 1;
-  margin-top: 4px;
-  pointer-events: auto;
+/* Make audio controls fill the available width inside the wrapper */
+.music-wrap audio,
+.music-wrap #myaudio {
+  width: 100%;
+  background: transparent;
 }
+
+/* Visible on light-mode too */
+body.light-mode .music-wrap { background: #fff !important; border-color: rgba(7,16,26,0.06) !important; }
+body.light-mode .music-wrap audio { background: transparent !important; color: #07101a !important; }
+
+/* ...existing code... */
 
 /* video player */
 .video-wrap {
