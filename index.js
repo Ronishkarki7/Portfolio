@@ -285,4 +285,69 @@ document.addEventListener('DOMContentLoaded', () => {
             resizeTimer = setTimeout(() => draw(), 100);
         });
     })();
+
+    // Robust audio loader: try candidate filenames, fetch blob and use ObjectURL
+    (async function loadAudioAsBlob() {
+        const audio = document.getElementById('myaudio');
+        if (!audio) return;
+
+        const candidates = [
+            'Image/nihita.mp3',
+            'Image/NIHITA.mp3',
+            'Image/NIHITA (नहत).mp3',
+            'Image/nihita.MP3',
+            '/Image/nihita.mp3'
+        ];
+
+        for (const url of candidates) {
+            try {
+                const res = await fetch(url);
+                if (!res.ok) continue;
+                const blob = await res.blob();
+                if (!blob.type.startsWith('audio')) continue;
+
+                // revoke previous object URL if any
+                if (audio._objectUrl) {
+                    URL.revokeObjectURL(audio._objectUrl);
+                }
+
+                const objectUrl = URL.createObjectURL(blob);
+                audio._objectUrl = objectUrl;
+                audio.src = objectUrl;
+                audio.load();
+                console.info('Audio loaded from:', url);
+
+                // attempt to play on first user interaction (bypass autoplay block)
+                function tryPlayOnce() {
+                    audio.play().catch(() => {/* user gesture required */});
+                    document.removeEventListener('click', tryPlayOnce);
+                    document.removeEventListener('keydown', tryPlayOnce);
+                }
+                document.addEventListener('click', tryPlayOnce, { once: true });
+                document.addEventListener('keydown', tryPlayOnce, { once: true });
+
+                // attach error handler
+                audio.addEventListener('error', (ev) => {
+                    console.error('Audio playback error for', audio.currentSrc, ev);
+                });
+
+                return; // success — stop trying other candidates
+            } catch (err) {
+                // fetch failed for this candidate — try next
+                console.warn('Audio candidate failed:', url, err);
+                continue;
+            }
+        }
+
+        // none worked — show inline message to user for clarity
+        const wrap = document.querySelector('.music-wrap') || audio.parentElement || document.body;
+        if (!document.getElementById('audio-error-msg')) {
+            const msg = document.createElement('div');
+            msg.id = 'audio-error-msg';
+            msg.textContent = 'Audio not available on server. Check filenames and push assets to GitHub.';
+            msg.style.color = '#fca5a5';
+            msg.style.marginTop = '8px';
+            wrap.appendChild(msg);
+        }
+    })();
 });
