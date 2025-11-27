@@ -1237,3 +1237,12 @@ body.light-mode .layout-canvas-wrap {
   background: #e8e8e8 !important;
   border-color: rgba(0,0,0,0.1) !important;
 }
+
+/* space between video and music */
+.video-wrap + .music-wrap {
+  margin-top: 20px;
+}
+/* optional: ensure consistent spacing on small screens */
+@media (max-width: 640px) {
+  .video-wrap + .music-wrap { margin-top: 20px; }
+}
