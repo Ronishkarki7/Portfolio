@@ -28,7 +28,6 @@
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
-                <!-- Theme toggle button (added) -->
                 <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">🌙</button>
             </nav>
         </div>
@@ -60,8 +59,6 @@
                         and sharing knowledge with the developer community.
                     </p>
                 </div>
-
-                <!-- Image Slider Section -->
                 <div class="image-slider-container">
                     <h3 class="slider-title">My Journey</h3>
                     <div class="slider-wrapper">
@@ -325,6 +322,58 @@
                 Your browser does not support the audio element.
             </audio>
         </div>
+    <section class="section layout-section" id="layout">
+      <div class="container layout-wrapper">
+        <div class="layout-note">
+          <h2 class="section-title">Flexbox vs Grid</h2>
+          <p>
+            Flexbox handles one dimension (row or column) and is great for aligning items along a single axis.
+            Grid handles two dimensions (rows and columns) and is ideal when you need explicit control over both axes.
+          </p>
+          <p><strong>Chosen:</strong> CSS Grid — used below to arrange demo cards responsively.</p>
+          <p class="muted">Resize the browser to see the grid reflow across columns and rows.</p>
+
+          <!-- Added: canvas demo that fits the layout-note area -->
+          <p class="layout-canvas-label"><strong>Canvas demo:</strong> Simple drawing using JavaScript</p>
+          <div class="layout-canvas-wrap">
+            <canvas id="layoutCanvas" role="img" aria-label="Grid demo canvas"></canvas>
+          </div>
+        </div>
+
+        <div class="layout-grid" aria-hidden="false">
+          <article class="layout-card">
+            <img src="Image/profile.png" alt="Demo 1">
+            <h3>Project A</h3>
+            <p class="muted">Compact description of Project A.</p>
+          </article>
+
+          <article class="layout-card">
+            <img src="Image/IMG_6283.png" alt="Demo 2">
+            <h3>Project B</h3>
+            <p class="muted">Compact description of Project B.</p>
+          </article>
+
+          <article class="layout-card">
+            <img src="Image/IMG_5963.png" alt="Demo 3">
+            <h3>Project C</h3>
+            <p class="muted">Compact description of Project C.</p>
+          </article>
+
+          <article class="layout-card">
+            <img src="Image/IMG_6736.png" alt="Demo 4">
+            <h3>Project D</h3>
+            <p class="muted">Compact description of Project D.</p>
+          </article>
+
+          <article class="layout-card">
+            <img src="Image/IMG_3016.JPG" alt="Demo 5">
+            <h3>Project E</h3>
+            <p class="muted">Compact description of Project E.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
         <button class="signup-btn" id="signupBtn">Up</button>
 
     </main>

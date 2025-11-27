@@ -931,7 +931,7 @@ body.light-mode .dot.active {
   background: #07101a;
 }
 
-/* === Strong light-mode overrides (append to end of file) === */
+/* Strong light-mode overrides (append to end of file)  */
 html.light-mode, body.light-mode {
   background: #f7fafc !important; /* page background */
   color: #07101a !important;      /* default text color = dark/near-black */
@@ -1158,4 +1158,82 @@ img { display: block; max-width: 100%; }
     padding: 8px 12px;
     font-size: 18px;
   }
+}
+/* === Layout demo: Grid example === */
+.layout-section { padding: 3.5rem 0; }
+
+.layout-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 28px;
+  align-items: start;
+}
+
+.layout-note p { margin: 0 0 12px; line-height: 1.6; }
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.layout-card {
+  background: rgba(11,18,32,0.7);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.layout-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.layout-card h3 { margin: 0; font-size: 1rem; color: #eaf3ff; }
+.layout-card .muted { font-size: 0.85rem; color: #97a3ad; margin-top: auto; }
+
+.layout-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+
+/* Light-mode overrides */
+body.light-mode .layout-card {
+  background: #fff !important;
+  color: #07101a !important;
+  border-color: rgba(7,16,26,0.06) !important;
+}
+body.light-mode .layout-card h3 { color: #07101a !important; }
+body.light-mode .layout-note p { color: #334155 !important; }
+
+/* Canvas styles for layout demo */
+.layout-canvas-label { margin-top: 12px; color: var(--muted, #97a3ad); font-size: 0.95rem; }
+
+.layout-canvas-wrap {
+  width: 100%;
+  height: 220px;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f0f0f0;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Make canvas fill the wrapper (use JS to set backing size for crisp rendering) */
+.layout-canvas-wrap canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Light-mode canvas background override */
+body.light-mode .layout-canvas-wrap {
+  background: #e8e8e8 !important;
+  border-color: rgba(0,0,0,0.1) !important;
 }
