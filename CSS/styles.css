@@ -4,6 +4,7 @@
   --container-max: 1100px;
   --space-lg: clamp(3rem, 6vw, 5rem);
   --space-md: clamp(1.5rem, 3vw, 2.5rem);
+  --header-height: 76px; /* add header height for fixed layout */
 }
 
 html {
@@ -28,10 +29,12 @@ html, body {
 
 /* header */
 .site-header {
-  position: sticky;
+  position: fixed;           /* keep header always visible */
   top: 0;
   left: 0;
   right: 0;
+  height: var(--header-height);
+  display: block;
   background: rgba(7, 16, 26, 0.95);
   z-index: 1000;
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -970,10 +973,9 @@ body.light-mode .muted,
 body.light-mode .lead,
 body.light-mode .experience-details li,
 body.light-mode .about-text {
-  color: #334155 !important; /* slightly lighter than pure black for readability */
+  color: #334155 !important; 
 }
 
-/* Buttons and controls */
 body.light-mode .btn {
   background: #07101a !important;
   color: #ffffff !important;
@@ -1008,13 +1010,21 @@ body.light-mode * {
   background-image: none !important;
 }
 
-/* small responsive tweak if needed */
 @media (prefers-color-scheme: light) {
   /* Respect system preference but keep our overrides */
   html.light-mode, body.light-mode { background: #f7fafc !important; }
 }
 
-/* utilities */
+/* push main content below fixed header and avoid links jumping under it */
+main, .container {
+  scroll-padding-top: var(--header-height);
+}
+
+/* ensure sections don't get hidden when linking via anchors */
+.section {
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
 a:focus, input:focus, button:focus, textarea:focus {
   outline: 2px solid rgba(110,231,183,0.14);
   outline-offset: 2px;
